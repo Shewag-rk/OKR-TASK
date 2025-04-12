@@ -1,83 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OKR-Task</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="container">
-        <div class="threeBtn">
-            <button type="menu" class="btn firstBtn">1</button>
-            <button type="menu" class="btn secondBtn">2</button>
-            <button type="menu" class="btn thirdBtn">3</button>
+      <div class="feedbackButtons">
+        <div class="button-container">
+          <a href="#" class="circle-button roundBtn1">1</a>
+          <span class="button-text">Update OKRs</span>
         </div>
-        <form id="usersInputs">
-            <div class="form-group">
-                <label for="nickname">Nickname:</label>
-                <input type="text" id="nickname" name="nickname">
-                <small id="errorMessage" class="nicknameError"></small>
-            </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email">
-                <small id="errorMessage"></small>
-            </div>
-            <div class="form-group">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username">
-                <small id="errorMessage"></small>
-            </div>
-            <div class="form-group">
-                <label for="number">Phone Number:</label>
-                <input type="number" id="number" name="number">
-                <small id="errorMessage"></small>
-            </div>
-            <button class="nextBtn1">Next</button>
-        </form>
 
-        <!-- Second form file -->
+        <div class="button-container">
+          <a href="#" class="circle-button roundBtn2">2</a>
+          <span class="button-text">Add New</span>
+        </div>
 
-        <form id="usersInputs2">
-            <div class="form-group">
-                <label for="sslEducation">SSLC Precentage:</label>
-                <input type="text" id="sslEducation" name="sslEducation">
-            </div>
-            <div class="form-group">
-                <label for="hlscEducation">SSLC Precentage:</label>
-                <input type="text" id="hlscEducation" name="hlscEducation">
-            </div>
-            <div class="form-group">
-                <label for="occupation">Occupation:</label>
-                <input type="email" id="occupation" name="occupation">
-            </div>
-            <div class="form-group">
-                <label for="address">Address:</label>
-                <input type="text" id="address" name="address">
-            </div>
-            <div class="form-group">
-                <label for="pincode">Pincode:</label>
-                <input type="number" id="pincode" name="pincode">
-            </div>
-            <button class="nextBtn2">Next</button>
-        </form>
+        <div class="button-container">
+          <a href="#" class="circle-button roundBtn3">3</a>
+          <span class="button-text">Review</span>
+        </div>
+      </div>
 
-        <!-- Third form file -->
+      <form id="usersInputs">
+        <div class="form-group">
+          <label for="nickname">Nickname:</label>
+          <input
+            type="text"
+            id="nickname"
+            name="nickname"
+            oninput="tempStorage()"
+          />
+          <small id="error-nickname" class="errorMessage"></small>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" oninput="tempStorage()" />
+          <small id="error-email" class="errorMessage"></small>
+        </div>
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            oninput="tempStorage()"
+          />
+          <small id="error-username" class="errorMessage"></small>
+        </div>
+        <div class="form-group">
+          <label for="number">Phone Number:</label>
+          <input
+            type="number"
+            id="number"
+            name="number"
+            oninput="tempStorage()"
+          />
+          <small id="error-phoneNumber" class="errorMessage"></small>
+        </div>
+        <button class="nextBtn1">Next</button>
+      </form>
 
-        <form id="usersInputs3">
-            <div class="form-group">
-                <label for="aadhar">Aadhar:</label>
-                <input type="text" id="aadhar" name="aadhar">
-            </div>
-            <div class="form-group">
-                <label for="panNumber">Pan Number:</label>
-                <input type="email" id="panNumber" name="panNumber">
-            </div>
-            <button type="submit">Submit</button>
-        </form>
+      <!-- Second form file -->
+
+      <form id="usersInputs2">
+        <div class="form-group">
+          <label for="sslEducation">SSLC Precentage:</label>
+          <input
+            type="text"
+            id="sslcEducation"
+            name="sslEducation"
+            oninput="tempStorage()"
+            required
+          />
+          <small id="error-sslcMark" class="errorMessage"></small>
+        </div>
+        <div class="form-group">
+          <label for="hlscEducation">SSLC Precentage:</label>
+          <input
+            type="text"
+            id="hlscEducation"
+            name="hlscEducation"
+            oninput="tempStorage()"
+            required
+          />
+          <small id="error-hslcMark" class="errorMessage"></small>
+        </div>
+        <div class="form-group">
+          <label for="occupation">Occupation:</label>
+          <input
+            type="text"
+            id="occupation"
+            name="occupation"
+            oninput="tempStorage()"
+            required
+          />
+          <small id="error-Occupation" class="errorMessage"></small>
+        </div>
+        <div class="form-group">
+          <label for="address">Address:</label>
+          <input
+            type="text"
+            id="address"
+            name="address"
+            oninput="tempStorage()"
+            required
+          />
+          <small id="error-Address" class="errorMessage"></small>
+        </div>
+        <div class="form-group">
+          <label for="pincode">Pincode:</label>
+          <input
+            type="number"
+            id="pincode"
+            name="pincode"
+            oninput="tempStorage()"
+            required
+          />
+          <small id="error-Pincode" class="errorMessage"></small>
+        </div>
+        <button class="nextBtn2">Next</button>
+      </form>
+
+      <!-- Third form file -->
+
+      <form id="usersInputs3">
+        <div class="form-group">
+          <label for="aadhar">Aadhar:</label>
+          <input type="file" accept=".pdf" id="aadhar" name="aadhar" />
+        </div>
+        <div class="form-group">
+          <label for="panNumber">Pan Number:</label>
+          <input type="file" accept=".pdf" id="panNumber" name="panNumber" />
+        </div>
+        <button type="submit" class="submitBtn">Submit</button>
+      </form>
     </div>
     <!-- Script file -->
-     <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
